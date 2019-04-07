@@ -1,0 +1,23 @@
+.nav-list {
+  height: 50px;
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+
+#logo {
+
+}
+
+.nav-item {
+  margin: 0 2em;
+}
+
+#right {
+  
+  margin-left: auto;
+}
+
+.inline {
+  display: inline-block;
+}
