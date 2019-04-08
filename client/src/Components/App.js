@@ -9,7 +9,7 @@ import Notfound from './NotFound';
 import OrderConfirm from './OrderConfirm';
 import Signup from './Signup';
 import Login from './Login';
-import './App.css';
+import '../css/App.css';
 
 // TODO: Login does not trigger app component did mount which is setting our loggedin state. 
 // Solution: React Context or Redux

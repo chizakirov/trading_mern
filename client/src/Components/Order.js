@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import debounce from 'lodash/debounce'; //select only 1 module of lodash, not entire lodash
 import stockservices from '../stockservices';
-import './Order.css';
+import '../css/Order.css';
 
 class Order extends Component {
   constructor(props) {
@@ -14,7 +14,6 @@ class Order extends Component {
       quantity: 1,
       type: "",
       err: ''
-      // redirectRoute: false
     };
   }
 
