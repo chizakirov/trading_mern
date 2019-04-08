@@ -19,12 +19,9 @@ class Research extends Component {
     try {
       event.preventDefault();
       const res = await stockservices.getChart(this.state.symbol);
-      console.log(res, res.data['Time Series (1min)']);
       this.setState({xAxis: Object.keys(res.data['Time Series (1min)'])})
       const prices = Object.values(res.data['Time Series (1min)']);
-      console.log("prices ", prices);
       const closingPrices = prices.map(price => price['4. close']);
-      console.log("closing prices", closingPrices);
       this.setState({yAxis: closingPrices});
     }catch(err) {
       console.log(err);
@@ -32,7 +29,6 @@ class Research extends Component {
   }
 
   render(){
-    console.log(this.state);
     let chartData = {
       labels: this.state.xAxis,
       datasets: [
