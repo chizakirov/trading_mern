@@ -1,22 +1,20 @@
-/* .App {
-  background-image: url("../img/bull.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 800px;
-  background-color: rgba(50, 50, 180, .7);
-} */
+* {
+  margin: 0;
+  padding: 0;
+}
 
 .nav-list {
-  height: 50px;
+  height: 80px;
   display: flex;
   list-style: none;
   justify-content: center;
-  color: white;
+  background: linear-gradient(to top, rgb(114, 209, 118), rgb(198, 243, 198), rgb(131, 216, 136));
 }
 
 .nav-item {
-  margin: 0 2em;
+  margin: 1.5em 2em;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #right {

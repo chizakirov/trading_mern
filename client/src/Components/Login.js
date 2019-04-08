@@ -11,7 +11,7 @@ class Login extends Component {
   // Standard ES5, the this keyword is binded when the function is run 
   // this keyword is going to be undefined, it loses its context
 
-  // ES6 Function declaration (arrow function)
+  // ES6: arrow function
   // It binds the `this` keyword at the time of creation 
   onChange = event => {
     // this is binded to Signup component 
@@ -35,16 +35,13 @@ class Login extends Component {
       } else {
         // If we get back a token, store it in local storage
         localStorage.setItem('jwt', res.data);
+        window.location.reload();
         this.props.history.push('/');
+        
       }
     } catch (err) {
       this.setState({ err });
     }
-
-
-
-
-
   }
 
   render() {

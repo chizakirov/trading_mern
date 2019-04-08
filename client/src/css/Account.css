@@ -1,0 +1,28 @@
+.account-wrapper {
+  background-image: url("../img/bull.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 800px;
+  background-color: rgba(50, 50, 180, .7);
+  color: white;
+}
+
+.position_table {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.position_table th {
+  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8));
+  background-blend-mode: darken;
+}
+.position_table td {
+  background-image: linear-gradient(to top, rgba(34, 218, 28, .5), rgba(31, 204, 54, .7));
+}
+
+.position_table, .position tr, .position td, .position th {
+  text-align: center;
+  border: 2px solid green;
+  padding: 10px;
+}

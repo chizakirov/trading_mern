@@ -33,7 +33,7 @@ class Order extends Component {
           this.setState({ err: res.data.message });
         } else {
           this.props.history.push({
-            pathname: "/orderConfirm",
+            pathname: "/account",
             state: { data: res.data }
           })
         }

@@ -39,10 +39,10 @@ class App extends Component {
     console.log('isLoggedIn?', isLoggedIn);
     return (
       <Router>
-        <div className="App">
+        <div className="app">
           <nav>
             <ul className="nav-list">
-              <li className="nav-item" id="home"> <Link to="/">Home</Link> </li>
+              <li className="nav-item"> <Link to="/">Home</Link> </li>
               {isLoggedIn && <li className="nav-item">   <Link to="/account">Account Overview</Link> </li>}
               <li className="nav-item"> <Link to="/order">Trade</Link> </li>
               <li className="nav-item"> <Link to="/research">Research</Link>  </li>

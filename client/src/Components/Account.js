@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import stockservices from '../stockservices';
+import '../css/Account.css';
 
 class Account extends Component{
   state = {
@@ -26,21 +27,39 @@ class Account extends Component{
 
   render(){
     return(
-      <div>
-        <h1>Account Overview</h1>
-        <form onSubmit={this.Deposit}>
-          <input type="number" onChange={(e) => {this.onChange(e.target.value)}} />
-          <button type="submit">Deposit</button>
-        </form>
-        Balance: {this.state.balance}
-        <br></br>
-        Orders: 
-        <ul>
-          {this.state.orders.map(order => <li key={order._id}>{order.symbol}</li>)}
-        </ul>
-        {/* Returns: 
-        //find each symbol: find opening & closing (buy, sell) = > calculate remaining # of stocks for each symbol. calculate return = (total sell-total buy)/total buy*100 */}
-
+      <div className="account-wrapper">
+        <div className="account-stats">
+          <h1>Account Overview</h1>
+          <form onSubmit={this.Deposit}>
+            <input type="number" onChange={(e) => {this.onChange(e.target.value)}} />
+            <button type="submit">Deposit</button>
+          </form>
+          Balance: {this.state.balance}
+        </div>
+        <h3>Order History</h3>
+        <table className="position_table">
+          <tr>
+            <th>Symbol</th>
+            <th>Type</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Date</th>
+          </tr>
+            {this.state.orders.map(order => 
+              { const total = Math.round(+order.quantity * +order.price*100)/100;
+                return(
+                <tr key={order._id}>
+                  <td>{order.symbol}</td>
+                  <td>{order.type}</td>
+                  <td>{order.quantity}</td>
+                  <td>{order.price}</td>
+                  <td>{total}</td>
+                  <td>{order.date}</td>
+                </tr>
+              )}
+            )}
+        </table>
       </div>
     )
   }

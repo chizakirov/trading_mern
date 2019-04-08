@@ -9,9 +9,7 @@
 
 .Order {
   margin: 0 auto;  /* align this div in the middle horizontally */
-  max-width: 70;
   width: 80%;
-  margin-top: 2em;
   color: white;
   min-height: 800px;
   background-color: rgba(50, 50, 180, .7);
@@ -20,6 +18,7 @@
 #order-title {
   text-align: center;
   font-size: 40px;
+  padding-top: 15px;
 }
 
 h3 {
@@ -33,6 +32,7 @@ h3 {
   text-align: center;
   font-weight: bold;
   font-size: 18px;
+  font-style: italic;
 }
 
 .order-form {
@@ -44,7 +44,8 @@ h3 {
   align-items: center;
   font-weight: bold;
   font-size: 15px;
-  background-color: rgba(36, 36, 71, 0.4);
+  /* background-color: rgba(36, 36, 71, 0.4); */
+  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8));
 }
 
 .order-input {
