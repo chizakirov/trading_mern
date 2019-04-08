@@ -1,12 +1,18 @@
+/* .App {
+  background-image: url("../img/bull.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 800px;
+  background-color: rgba(50, 50, 180, .7);
+} */
+
 .nav-list {
   height: 50px;
   display: flex;
   list-style: none;
   justify-content: center;
-}
-
-#logo {
-
+  color: white;
 }
 
 .nav-item {
@@ -14,7 +20,6 @@
 }
 
 #right {
-  
   margin-left: auto;
 }
 

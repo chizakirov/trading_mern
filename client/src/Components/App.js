@@ -39,10 +39,10 @@ class App extends Component {
     console.log('isLoggedIn?', isLoggedIn);
     return (
       <Router>
-        <div>
+        <div className="App">
           <nav>
             <ul className="nav-list">
-              <li className="nav-item" id="logo"> <Link to="/">Logo</Link> </li>
+              <li className="nav-item" id="home"> <Link to="/">Home</Link> </li>
               {isLoggedIn && <li className="nav-item">   <Link to="/account">Account Overview</Link> </li>}
               <li className="nav-item"> <Link to="/order">Trade</Link> </li>
               <li className="nav-item"> <Link to="/research">Research</Link>  </li>
@@ -55,7 +55,6 @@ class App extends Component {
 
             </ul>
           </nav>
-
 
           {isLoggedIn ?
             <Switch>
