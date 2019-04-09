@@ -1,0 +1,9 @@
+.home {
+  background-image: url("../img/bull.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 800px;
+  color: white;
+}
+

@@ -5,14 +5,21 @@ import '../css/Account.css';
 class Account extends Component{
   state = {
     balance: 0,
+    orderBalance: 0,
     deposit: 0,
     orders: []
   }
 
   async componentDidMount() {
-    const res = await stockservices.allOrders();
-    console.log(res.data);
-    this.setState({orders: res.data.orders, balance: res.data.balance});
+    try{
+      const res = await stockservices.allOrders();
+      this.setState({orders: res.data.orders, balance: res.data.balance});
+      // const orderBalance = await stockservices.currentBalance();
+      // this.setState({orderBalance: orderBalance});
+    }catch(err){
+      console.log(err)
+    }
+    
   }
   onChange = (deposit) => {
     this.setState({ deposit })
@@ -28,18 +35,20 @@ class Account extends Component{
   render(){
     return(
       <div className="account-wrapper">
-        <div className="account-stats">
-          <h1>Account Overview</h1>
+        <h1>Account Overview</h1>
+        <div className="deposit">
+          <h4>Enter an amount to deposit</h4>
           <form onSubmit={this.Deposit}>
-            <input type="number" onChange={(e) => {this.onChange(e.target.value)}} />
+            <input type="number" onChange={e => {this.onChange(e.target.value)}} />
             <button type="submit">Deposit</button>
           </form>
-          Balance: {this.state.balance}
+          <h3>Balance: ${this.state.balance}</h3>
+          {/* <h3>Order Balance: {this.state.orderBalance}</h3> */}
         </div>
         <h3>Order History</h3>
         <table className="position_table">
           <tr>
-            <th>Symbol</th>
+            <th>Stock</th>
             <th>Type</th>
             <th>Quantity</th>
             <th>Price</th>
@@ -48,6 +57,7 @@ class Account extends Component{
           </tr>
             {this.state.orders.map(order => 
               { const total = Math.round(+order.quantity * +order.price*100)/100;
+                const orderDate = new Date(order.date).toDateString('MM/DD/YYYY');
                 return(
                 <tr key={order._id}>
                   <td>{order.symbol}</td>
@@ -55,7 +65,7 @@ class Account extends Component{
                   <td>{order.quantity}</td>
                   <td>{order.price}</td>
                   <td>{total}</td>
-                  <td>{order.date}</td>
+                  <td>{orderDate}</td>
                 </tr>
               )}
             )}

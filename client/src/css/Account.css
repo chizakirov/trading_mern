@@ -4,25 +4,60 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 800px;
-  background-color: rgba(50, 50, 180, .7);
   color: white;
 }
 
+h1 {
+  text-align: center;
+  font-size: 35px;
+  padding-top: 20px;
+}
+
+.deposit {
+  width: 60%;
+  margin: 40px auto;
+  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8));
+  /* border: 1px solid green; */
+  padding: 20px;
+  text-align: center;
+  border: 1px solid gray;
+}
+
+button {
+  display: block;
+  width: 5em;
+  margin: 7px auto;
+  padding: 8px;
+  background-color: #28a745;
+  border: 1px solid #28a745;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+input {
+  border-radius: 3px;
+  padding: 5px;
+  width: 30%;
+}
 .position_table {
   width: 60%;
   margin: 0 auto;
+  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8));
+  border: 1px solid gray;
+  padding: 20px;
 }
 
 .position_table th {
-  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8));
+  background-image: linear-gradient(to top, rgba(10,30,10,.6), rgba(36, 51, 39, 0.8));
   background-blend-mode: darken;
-}
-.position_table td {
-  background-image: linear-gradient(to top, rgba(34, 218, 28, .5), rgba(31, 204, 54, .7));
+  font-weight: bold;
+  font-size: 15px;
+  padding-bottom: 5px;
 }
 
-.position_table, .position tr, .position td, .position th {
+td {
+  background-image: linear-gradient(to top, rgba(34, 218, 28, .5), rgba(31, 204, 54, .5));
   text-align: center;
-  border: 2px solid green;
-  padding: 10px;
 }
+

@@ -19,7 +19,6 @@ class App extends Component {
     isLoggedIn: false
   }
   componentDidMount() {
-    console.log('fired off');
     if (localStorage.getItem('jwt')) {
       const decoded = jwt_decode(localStorage.getItem('jwt'))
       if (decoded.email) {
@@ -31,20 +30,18 @@ class App extends Component {
   logout = () => {
     this.setState({ isLoggedIn: false });
     localStorage.removeItem('jwt');
-
   }
 
   render() {
     const { isLoggedIn } = this.state;
-    console.log('isLoggedIn?', isLoggedIn);
     return (
       <Router>
         <div className="app">
           <nav>
             <ul className="nav-list">
               <li className="nav-item"> <Link to="/">Home</Link> </li>
-              {isLoggedIn && <li className="nav-item">   <Link to="/account">Account Overview</Link> </li>}
-              <li className="nav-item"> <Link to="/order">Trade</Link> </li>
+              {isLoggedIn && <li className="nav-item">   <Link to="/account">Account</Link> </li>}
+              {isLoggedIn &&<li className="nav-item"> <Link to="/order">Trade</Link> </li>}
               <li className="nav-item"> <Link to="/research">Research</Link>  </li>
               <div id="right">
                 {!isLoggedIn && <li className="nav-item inline">  <Link to="/signup">Signup</Link> </li>}

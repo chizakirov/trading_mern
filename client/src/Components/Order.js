@@ -90,7 +90,7 @@ class Order extends Component {
             <input className="order-input" type="number" name="price" value={this.state.price} onChange={e => this.setSymbol(e.target.value)} disabled />
 
             <label>Quantity <span>&#42;</span>:</label>
-            <input className="order-input" type="number" name="quantity" onChange={e => this.setQuantity(e.target.value)} placeholder="enter a quantity of shares"/>
+            <input className="order-input" type="number" name="quantity" onChange={e => this.setQuantity(e.target.value)} placeholder="enter a quantity"/>
 
             <button id="order-button" type="submit">Order</button>
           </form>

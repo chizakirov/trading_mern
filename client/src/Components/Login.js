@@ -47,12 +47,15 @@ class Login extends Component {
   render() {
     const { err } = this.state;
     return (
-      <form onSubmit={this.login}>
-        <input type="email" name="email" placeholder="Email" onChange={this.onChange} />
-        <input type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
-        <button type="submit"> Login </button>
-        {err && <p> {err} </p>}
-      </form>
+      <div>
+        <form onSubmit={this.login}>
+          <input type="email" name="email" placeholder="Email" onChange={this.onChange} />
+          <input type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
+          <button type="submit"> Login </button>
+          {err && <p> {err} </p>}
+        </form>
+      </div>
+      
     )
   }
 

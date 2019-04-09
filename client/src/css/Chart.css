@@ -1,0 +1,68 @@
+
+.research{
+  background-image: url("../img/bull.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 800px;
+  color: white;
+}
+
+.inner-research {
+    margin: 0 auto;  /* align this div in the middle horizontally */
+    width: 65%;
+    color: white;
+    min-height: 800px;
+}
+
+.chart {
+  background: white;
+  margin: 30px auto;
+  height: 100%;
+  padding: 10px;
+}
+
+.news {
+  margin: 25px auto;
+  padding: 20px;
+}
+
+.form {
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 35px;
+  padding-top: 15px;
+  margin: 50px;
+}
+
+h4 {
+  font-size: 18px;
+  text-align: center;
+}
+
+p{
+  font-weight: bold;
+}
+
+.stock-stats{
+  margin: 0 auto;
+  width: 80%;
+  padding: 20px 100px;
+  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
+  border: 1px solid gray;
+  font-weight: bold;
+}
+
+#links {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#links:hover {
+    color: rgb(40, 104, 224); 
+}

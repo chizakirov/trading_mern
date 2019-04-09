@@ -8,19 +8,27 @@
   display: flex;
   list-style: none;
   justify-content: center;
-  background: linear-gradient(to top, rgb(114, 209, 118), rgb(198, 243, 198), rgb(131, 216, 136));
+  background: linear-gradient(to top, gray, lightgray, gray);
 }
 
 .nav-item {
-  margin: 1.5em 2em;
-  font-size: 20px;
-  font-weight: bold;
+  margin: auto 1.5em;
+  font-size: 22px;
+  font-weight: 800;
 }
 
+a {
+  color: rgb(46, 167, 46);
+}
+
+a:hover {
+  color: black;
+}
 #right {
   margin-left: auto;
 }
 
 .inline {
   display: inline-block;
+  margin: 1.3em 1.5em;
 }
