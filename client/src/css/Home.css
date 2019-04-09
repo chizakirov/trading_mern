@@ -1,0 +1,30 @@
+.home {
+  background-image: url("../img/bull.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 800px;
+  color: white;
+}
+
+.inner-home {
+  width: 100%;
+  min-height: 800px;
+  background-image: linear-gradient(to top, rgba(0,0,0,.4), rgba(0,0,0,.3));
+}
+
+#home-title {
+  padding-top: 200px;
+  /* background-image: linear-gradient(to top, rgba(0,0,0,.8), rgba(0,0,0,.7)); */
+}
+
+
+hr {
+  height: 1px;
+  border: 0.7px solid rgb(58, 211, 58);
+  margin: 3em auto;
+  padding: 0; 
+  width: 80%;
+  
+}
+
