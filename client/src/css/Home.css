@@ -3,13 +3,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 800px;
+  min-height: 1100px;
+  min-height: 100vh;
   color: white;
 }
 
 .inner-home {
   width: 100%;
-  min-height: 800px;
+  min-height: 1100px;
   background-image: linear-gradient(to top, rgba(0,0,0,.4), rgba(0,0,0,.3));
 }
 

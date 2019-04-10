@@ -3,14 +3,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 800px;
+  min-height: 100vh;
   color: white;
 }
 
 h1 {
   text-align: center;
   font-size: 35px;
-  padding-top: 20px;
+  padding-top: 50px;
 }
 
 .deposit {
@@ -31,7 +31,7 @@ button {
   border: 1px solid #28a745;
   color: white;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 3px;
 }
 
 input {

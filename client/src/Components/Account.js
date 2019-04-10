@@ -12,12 +12,11 @@ class Account extends Component{
   async componentDidMount() {
     try{
       const res = await stockservices.allOrders();
-      console.log(" res", res);
+      // console.log(" res", res);
       this.setState({orders: res.data.orders, balance: res.data.balance});
     }catch(err){
       console.log(err)
     }
-    
   }
   onChange = (deposit) => {
     this.setState({ deposit })
@@ -27,7 +26,7 @@ class Account extends Component{
     event.preventDefault();
     const res = await stockservices.updateBalance({deposit: this.state.deposit});
     this.setState({balance: res.data})
-    console.log(res);
+    // console.log(res);
   }
 
   render(){
@@ -55,7 +54,6 @@ class Account extends Component{
           </form>
           <h4>Initial Balance: ${this.state.balance}</h4>
           <h4>Current Balance: ${currentBalance}</h4>
-
         </div>
         <h3>Order History</h3>
         <table className="position_table">

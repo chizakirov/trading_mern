@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Line} from 'react-chartjs-2'; //make sure to install these lib in client folder
 import stockservices from '../stockservices';
-import '../css/Chart.css';
+import '../css/Research.css';
 
 class Research extends Component {
   state = {
@@ -109,7 +109,7 @@ class Research extends Component {
 
         <h4>Enter a ticker symbol</h4>
         <form className="form" onSubmit={this.getChart}>
-          <input type="text" onChange={e => (this.setSymbol(e.target.value))}/>
+          <input id="search-input" type="text" onChange={e => (this.setSymbol(e.target.value))}/>
           <button type="submit">Search</button>
         </form>
         <div className="main">

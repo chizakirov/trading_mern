@@ -3,7 +3,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 800px;
+  min-height: 1100px;
+  min-height: 100vh;
   
 }
 
@@ -53,10 +54,10 @@ h3 {
 
 .order-input {
   width: 50%;
-  height: 25px;
+  height: 30px;
   margin: 1em auto;
   font-weight: bold;
-  border-radius: 4px;
+  border-radius: 3px;
   border: 1px solid gray;
 }
 
@@ -69,7 +70,7 @@ h3 {
   border: 1px solid #28a745;
   color: white;
   font-weight: bold;
-  border-radius: 6px;
+  border-radius: 3px;
 
 }
 

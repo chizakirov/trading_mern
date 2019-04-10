@@ -3,7 +3,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 800px;
+  min-height: 1100px;
+  min-height: 100vh;
   color: white;
 }
 
@@ -27,6 +28,7 @@
   font-size: 15px;
   border: 1px solid gray;
   background-image: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,.5));
+  box-shadow: 0 14px 28px rgba(128,128,128,0.25), 0 10px 10px rgba(128, 128, 128, 0.22);
 }
 
 .log-input {
