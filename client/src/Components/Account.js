@@ -5,7 +5,6 @@ import '../css/Account.css';
 class Account extends Component{
   state = {
     balance: 0,
-    orderBalance: 0,
     deposit: 0,
     orders: []
   }
@@ -13,9 +12,8 @@ class Account extends Component{
   async componentDidMount() {
     try{
       const res = await stockservices.allOrders();
+      console.log(" res", res);
       this.setState({orders: res.data.orders, balance: res.data.balance});
-      // const orderBalance = await stockservices.currentBalance();
-      // this.setState({orderBalance: orderBalance});
     }catch(err){
       console.log(err)
     }
@@ -33,6 +31,19 @@ class Account extends Component{
   }
 
   render(){
+    let orderTotal = 0;
+    if(this.state.orders.length){
+        orderTotal = this.state.orders.reduce((sum, order) => {
+        if(order.type.toLowerCase() === "buy"){
+          return sum - order.total;
+        }else{
+          return sum + order.total;
+        }
+      }, 0);
+      console.log("total of orders", orderTotal);
+    };
+    const currentBalance = Math.round((this.state.balance + orderTotal)*100)/100;
+
     return(
       <div className="account-wrapper">
         <h1>Account Overview</h1>
@@ -42,33 +53,41 @@ class Account extends Component{
             <input type="number" onChange={e => {this.onChange(e.target.value)}} />
             <button type="submit">Deposit</button>
           </form>
-          <h3>Balance: ${this.state.balance}</h3>
-          {/* <h3>Order Balance: {this.state.orderBalance}</h3> */}
+          <h4>Initial Balance: ${this.state.balance}</h4>
+          <h4>Current Balance: ${currentBalance}</h4>
+
         </div>
         <h3>Order History</h3>
         <table className="position_table">
+        <thead>
           <tr>
-            <th>Stock</th>
-            <th>Type</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-            <th>Date</th>
-          </tr>
-            {this.state.orders.map(order => 
-              { const total = Math.round(+order.quantity * +order.price*100)/100;
-                const orderDate = new Date(order.date).toDateString('MM/DD/YYYY');
+              <th>Stock</th>
+              <th>Type</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>Total</th>
+              <th>Date</th>
+            </tr>
+        </thead>
+         <tbody>
+         {this.state.orders.map(order => 
+              { 
+                const total = Math.round(+order.quantity * +order.price*100)/100;
+                const orderDate = new Date(order.date).toDateString("MM/DD/YYYY");
+
                 return(
                 <tr key={order._id}>
-                  <td>{order.symbol}</td>
-                  <td>{order.type}</td>
-                  <td>{order.quantity}</td>
-                  <td>{order.price}</td>
-                  <td>{total}</td>
-                  <td>{orderDate}</td>
+                  <td className="order-detail">{order.symbol.toUpperCase()}</td>
+                  <td className="order-detail">{order.type[0].toUpperCase() + order.type.slice(1)}</td>
+                  <td className="order-detail">{order.quantity}</td>
+                  <td className="order-detail">${order.price}</td>
+                  <td className="order-detail">${total}</td>
+                  <td className="order-detail">{orderDate}</td>
                 </tr>
               )}
             )}
+         </tbody>
+            
         </table>
       </div>
     )

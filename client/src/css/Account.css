@@ -17,7 +17,6 @@ h1 {
   width: 60%;
   margin: 40px auto;
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8));
-  /* border: 1px solid green; */
   padding: 20px;
   text-align: center;
   border: 1px solid gray;
@@ -61,3 +60,23 @@ td {
   text-align: center;
 }
 
+.order-detail {
+  font-weight: bold;
+  padding: 5px;
+}
+
+.order-detail:nth-child(1) {
+  width: 15%;
+}
+
+.order-detail:nth-child(2) {
+  width: 13%;
+}
+
+.order-detail:nth-child(4) {
+  width: 18%;
+}
+
+.order-detail:nth-child(5) {
+  width: 18%;
+}

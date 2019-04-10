@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import '../css/Signup.css';
 
 class Signup extends Component {
   state = {
@@ -40,22 +41,23 @@ class Signup extends Component {
     } catch (err) {
       this.setState({ err });
     }
-
-
-
-
-
   }
 
   render() {
     const { err } = this.state;
     return (
-      <form onSubmit={this.signUp}>
-        <input type="email" name="email" placeholder="Email" onChange={this.onChange} />
-        <input type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
-        <button type="submit"> Signup </button>
-        {err && <p> {err} </p>}
-      </form>
+      <div className="signup">
+        <div className="inner-signup">
+          <form className="signup-form" onSubmit={this.signUp}>
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Email" onChange={this.onChange} />
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
+            <button type="submit"> Signup </button>
+            {err && <p> {err} </p>}
+          </form>
+        </div>
+      </div>
     )
   }
 

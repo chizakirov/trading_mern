@@ -67,30 +67,16 @@ class Order extends Component {
     return (
       <div className="order-wrapper">
         <div className="Order">
-<<<<<<< HEAD
           {/* {this.state.err && <h1> {this.state.err} </h1>}
          / */}
           <h3>Enter a ticker symbol to place a trade</h3>
-=======
-          {this.state.err && <h1> {this.state.err} </h1>}
-          <h1 id="order-title">Place a trade</h1>
-          <div className="stats">
-            <p>Company Name: {this.state.companyName}</p>
-            <p>Symbol: {this.state.symbol}</p>
-            <p>Latest Price: {this.state.price}</p>
-          </div>
-          <h3>Enter a ticker symbol</h3>
->>>>>>> 50408b8e29a06dc0f7fa4d5c638477faa654ea47
           <form className="order-form" onSubmit={this.placeOrder}>
             <label>Symbol <span>&#42;</span>:</label>
             <input className="order-input" type="text" name="symbol" onChange={e => this.setSymbol(e.target.value)} placeholder="enter a symbol"/> 
 
-<<<<<<< HEAD
             <label>Company:</label>
             <input className="order-input" type="text" value={this.state.companyName} name="companyName" onChange={e => this.setSymbol(e.target.value)} disabled/>
 
-=======
->>>>>>> 50408b8e29a06dc0f7fa4d5c638477faa654ea47
             <label>Trade Type <span>&#42;</span>:</label>
               <select className="order-input" type="text" name="type" value={this.state.type} onChange={e => this.setType(e.target.value)}>
               <option>Select a trade type</option>

@@ -25,12 +25,6 @@ class Research extends Component {
   getChart = async(event) => { 
     try {
       event.preventDefault();
-      //for Intraday graph data
-      // const res = await stockservices.getChart(this.state.symbol);
-      // this.setState({xAxis: Object.keys(res.data['Time Series (1min)'])})
-      // const prices = Object.values(res.data['Time Series (1min)']);
-      // const closingPrices = prices.map(price => price['4. close']);
-      // this.setState({yAxis: closingPrices});
 
       const res = await stockservices.getNews(this.state.symbol);
       console.log(res.data);
@@ -118,25 +112,27 @@ class Research extends Component {
           <input type="text" onChange={e => (this.setSymbol(e.target.value))}/>
           <button type="submit">Search</button>
         </form>
+        <div className="main">
+          <div className="stock-stats">
+            <p>Company Name: {companyName} </p>
+            <p>Sector: {sector}</p>
+            <p>Market Cap: {marketCap} M</p>
+            <p>52 Week High: {week52High}</p>
+            <p>52 Week Low: {week52Low}</p>
+            <p>Price/Earnings Ratio: {peRatio}</p>
+            <p>YTD Change: {ytdChange}%</p>
+          </div>
 
-        <div className="stock-stats">
-          <p>Company Name: {companyName} </p>
-          <p>Sector: {sector}</p>
-          <p>Market Cap: {marketCap} M</p>
-          <p>52 Week High-Low: {week52High} - {week52Low}</p>
-          <p>Price/Earnings Ratio: {peRatio}</p>
-          <p>YTD Change: {ytdChange}%</p>
-        </div>
-
-        <div className="chart">
-          <Line data={chartData} options={chartData.options} width="450" height="220"/>
+          <div className="chart">
+            <Line data={chartData} options={chartData.options} width="450" height="220"/>
+          </div>
         </div>
 
           <div className="news">
-            <h3>Latest News</h3>
+            <h4>Latest News</h4>
             {this.state.news.map(n => {
               return(
-                <div key={n.url}>
+                <div className="news-link" key={n.url}>
                   <a id="links" href={ n.url }>{ n.headline }</a>
                 </div>
               )

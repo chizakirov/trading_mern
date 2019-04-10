@@ -7,7 +7,6 @@
   color: white;
 }
 
-<<<<<<< HEAD
 .inner-home {
   width: 100%;
   min-height: 800px;
@@ -22,12 +21,8 @@
 
 hr {
   height: 1px;
-  border: 0.7px solid rgb(58, 211, 58);
+  border: 0.5px solid rgb(58, 211, 58);
   margin: 3em auto;
   padding: 0; 
   width: 80%;
-  
 }
-
-=======
->>>>>>> 50408b8e29a06dc0f7fa4d5c638477faa654ea47

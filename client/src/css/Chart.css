@@ -4,60 +4,48 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 800px;
+  min-height: 100vh;
+  /* 100vh to cover entire page */
   color: white;
+  min-height: 1100px;
 }
 
-<<<<<<< HEAD
-/* .inner-research {
-    margin: 0 auto;  /* align this div in the middle horizontally */
-    /* width: 65%;
-    color: white;
-    min-height: 800px;
-} */
-
-.chart, .stock-stats {
-  display: inline-block;
+.main {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
 }
+
 .chart {
-  background: white;
-  margin: 30px 55px;
+  background: rgb(221, 220, 220);
   width: 60%;
   height: 100%;
   padding: 20px;
 }
 
 .stock-stats{
-  margin: 30px auto;
   width: 30%;
-  padding: 40px; 
+  padding: 50px; 
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
   border: 1px solid gray;
   font-weight: bold;
-=======
-.inner-research {
-    margin: 0 auto;  /* align this div in the middle horizontally */
-    width: 65%;
-    color: white;
-    min-height: 800px;
 }
 
-.chart {
-  background: white;
-  margin: 30px auto;
-  height: 100%;
-  padding: 10px;
->>>>>>> 50408b8e29a06dc0f7fa4d5c638477faa654ea47
+.stock-stats p {
+  margin-left: 55px;
 }
 
 .news {
-  margin: 25px auto;
-  padding: 20px;
+  margin: 70px auto;
+  padding: 15px;
+  width: 95%;
+  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
+  border: 1px solid gray;
+  font-weight: bold;
 }
 
 .form {
   text-align: center;
-<<<<<<< HEAD
   margin-bottom: 30px;
 }
 
@@ -66,15 +54,6 @@ h3 {
   font-size: 30px;
   padding-top: 50px;
   margin: 30px;
-=======
-}
-
-h1 {
-  text-align: center;
-  font-size: 35px;
-  padding-top: 15px;
-  margin: 50px;
->>>>>>> 50408b8e29a06dc0f7fa4d5c638477faa654ea47
 }
 
 h4 {
@@ -86,25 +65,16 @@ p{
   font-weight: bold;
 }
 
-<<<<<<< HEAD
-=======
-.stock-stats{
-  margin: 0 auto;
-  width: 80%;
-  padding: 20px 100px;
-  background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
-  border: 1px solid gray;
-  font-weight: bold;
-}
-
->>>>>>> 50408b8e29a06dc0f7fa4d5c638477faa654ea47
 #links {
   color: white;
   text-align: center;
   font-style: italic;
-  font-weight: bold;
 }
 
+.news-link {
+  margin-bottom: 8px;
+  margin-left: 200px;
+}
 #links:hover {
     color: rgb(40, 104, 224); 
 }
