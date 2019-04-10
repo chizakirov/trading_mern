@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
+import '../css/Signup.css';
 class Login extends Component {
   state = {
     email: '',
@@ -47,13 +47,17 @@ class Login extends Component {
   render() {
     const { err } = this.state;
     return (
-      <div>
-        <form onSubmit={this.login}>
-          <input type="email" name="email" placeholder="Email" onChange={this.onChange} />
-          <input type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
-          <button type="submit"> Login </button>
-          {err && <p> {err} </p>}
-        </form>
+      <div className="wrapper">
+        <div className="inner">
+          <h3>Log in</h3>
+          <form className="log-form" onSubmit={this.login}>
+            <input className="log-input" type="email" name="email" placeholder="Email" onChange={this.onChange} />
+            <input className="log-input" type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
+            <button type="submit"> Login </button>
+            {err && <p> {err} </p>}
+          </form>
+        </div>
+        
       </div>
       
     )

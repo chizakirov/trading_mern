@@ -46,13 +46,12 @@ class Signup extends Component {
   render() {
     const { err } = this.state;
     return (
-      <div className="signup">
-        <div className="inner-signup">
-          <form className="signup-form" onSubmit={this.signUp}>
-            <label>Email</label>
-            <input type="email" name="email" placeholder="Email" onChange={this.onChange} />
-            <label>Password</label>
-            <input type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
+      <div className="wrapper">
+        <div className="inner">
+          <h3>Sign up</h3>
+          <form className="log-form" onSubmit={this.signUp}>
+            <input className="log-input" type="email" name="email" placeholder="Email" onChange={this.onChange} />
+            <input className="log-input" type="password" name="password" placeholder="Password" minLength="8" onChange={this.onChange} />
             <button type="submit"> Signup </button>
             {err && <p> {err} </p>}
           </form>

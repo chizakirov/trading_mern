@@ -36,9 +36,11 @@ button {
 
 input {
   border-radius: 3px;
-  padding: 5px;
-  width: 30%;
+  padding: 4px;
+  width: 40%;
+  margin-bottom: 5px;
 }
+
 .position_table {
   width: 60%;
   margin: 0 auto;
