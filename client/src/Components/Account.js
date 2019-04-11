@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import _ from 'lodash/groupBy';
-import sumBy from 'lodash/sumBy';
+// import _ from 'lodash/groupBy';
+// import sumBy from 'lodash/sumBy';
 import stockservices from '../stockservices';
 import '../css/Account.css';
 

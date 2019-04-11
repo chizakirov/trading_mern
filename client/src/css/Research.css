@@ -7,7 +7,7 @@
   min-height: 100vh;
   /* 100vh to cover entire page */
   color: white;
-  min-height: 1150px;
+  min-height: 1200px;
 }
 
 .main {
@@ -46,6 +46,7 @@
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
   border: 1px solid gray;
   font-weight: bold;
+  font-size: 12px;
   border-radius: 3px;
   /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
 }

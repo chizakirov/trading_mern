@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "client": "npm start --prefix client",
-    "server": "nodemon server.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "server": "node server.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Chi Nguyen",
   "license": "ISC",
@@ -17,6 +18,7 @@
     "body-parser": "^1.18.3",
     "chart.js": "^1.1.1",
     "concurrently": "^4.1.0",
+    "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
@@ -27,5 +29,8 @@
     "react-chartjs": "^1.2.0",
     "react-chartjs-2": "^2.7.6",
     "request": "^2.88.0"
+  },
+  "engines": {
+    "node": "10.15.0"
   }
 }
