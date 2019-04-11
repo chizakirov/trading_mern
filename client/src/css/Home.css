@@ -26,3 +26,11 @@ hr {
   margin: 5em auto;
   width: 80%;
 }
+
+.footer {
+  margin-top: 680px;
+  text-align: center;
+}
+#copyright {
+  font-size: 10px;
+}
