@@ -79,5 +79,17 @@ export default {
       url: '/api/user/account'
     };
     return axios(options);
-  }
+  },
+
+  // getReturns(){
+  //   const jwtToken = localStorage.getItem('jwt');
+  //   const options = {
+  //     method: 'GET',
+  //     headers: {
+  //       'Authorization': `Bearer ${jwtToken}`
+  //     },
+  //     url: '/api/user/returns'
+  //   };
+  //   return axios(options);
+  // }
 }

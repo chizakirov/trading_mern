@@ -22,6 +22,7 @@
   height: 100%;
   padding: 20px;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  border-radius: 3px;
 }
 
 .stock-stats{
@@ -30,6 +31,7 @@
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
   border: 1px solid gray;
   font-weight: bold;
+  border-radius: 3px;
   /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
 }
 
@@ -44,6 +46,7 @@
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
   border: 1px solid gray;
   font-weight: bold;
+  border-radius: 3px;
   /* box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22); */
 }
 

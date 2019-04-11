@@ -10,6 +10,7 @@ module.exports = function (app) {
     .post('/api/user/signup', userController.Signup)
     .put('/api/user/account', checkToken, userController.updateBalance)
     .get('/api/user/orders', checkToken, userController.getOrders)
+    // .get('/api/user/returns', checkToken, userController.getReturns)
 
     .get('/api/stock/:symbol', controller.getQuote)
     .get('/api/position/:symbol', controller.getPosition)

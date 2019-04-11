@@ -21,6 +21,8 @@
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
     "lodash": "^4.17.11",
+    "lodash.groupby": "^4.6.0",
+    "lodash.sumby": "^4.6.0",
     "mongoose": "^5.4.20",
     "react-chartjs": "^1.2.0",
     "react-chartjs-2": "^2.7.6",

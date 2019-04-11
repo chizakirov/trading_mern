@@ -81,13 +81,13 @@ module.exports = {
     }
   },
 
-  // getReturns: async(req, res) => {
-  //   try{
-  //     //get each symbol, find if there's both sell & buy
-  //   }catch {
-  //     console.log(err);
-  //   }
-  // }
+  getReturns: async(req, res) => {
+    try{
+      
+    }catch {
+      console.log(err);
+    }
+  }
   
   // getInfo: async (req, res) => {
   //   try {

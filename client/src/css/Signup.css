@@ -17,6 +17,7 @@
 }
 
 .log-form {
+  border-radius: 3px;
   margin: 50px auto;
   padding: 30px;
   width: 60%;

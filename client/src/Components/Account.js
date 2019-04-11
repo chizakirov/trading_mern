@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import _ from 'lodash/groupBy';
+import sumBy from 'lodash/sumBy';
 import stockservices from '../stockservices';
 import '../css/Account.css';
 
@@ -6,14 +8,17 @@ class Account extends Component{
   state = {
     balance: 0,
     deposit: 0,
+    returns: 0,
     orders: []
   }
 
   async componentDidMount() {
     try{
       const res = await stockservices.allOrders();
-      // console.log(" res", res);
       this.setState({orders: res.data.orders, balance: res.data.balance});
+      //group by each symbol, sum quantity & total of each symbol totals
+      // const output = _.groupBy(res.data.orders, res.data.orders.symbol);
+      // console.log("output ", output);
     }catch(err){
       console.log(err)
     }
@@ -59,13 +64,13 @@ class Account extends Component{
         <table className="position_table">
         <thead>
           <tr>
-              <th>Stock</th>
-              <th>Type</th>
-              <th>Quantity</th>
-              <th>Price</th>
-              <th>Total</th>
-              <th>Date</th>
-            </tr>
+            <th>Stock</th>
+            <th>Type</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+            <th>Date</th>
+          </tr>
         </thead>
          <tbody>
          {this.state.orders.map(order => 

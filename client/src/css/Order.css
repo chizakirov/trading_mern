@@ -26,21 +26,11 @@ h3 {
   font-size: 25px;
   margin-bottom: 25px;
 }
-.stats {
-  margin: 50px auto;
-  width: 60%;
-  padding: 15px;
-  text-align: center;
-  font-weight: bold;
-  font-size: 18px;
-  font-style: italic;
-  background-image: linear-gradient(to top, rgba(0,0,0,.5), rgba(0,0,0,.5));
-  border: 1px solid gray;
-}
 
 .order-form {
+  border-radius: 3px;
   margin: 50px auto;
-  padding: 10px;
+  padding: 12px;
   width: 60%;
   display: flex;
   flex-direction: column;

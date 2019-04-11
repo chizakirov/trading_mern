@@ -56,13 +56,13 @@ class Research extends Component {
         {
           label: this.state.companyName,
           fill: false,
-          borderColor: "#98cc20",
+          borderColor: "#28a745",
           // borderDash: [5, 5],
-          backgroundColor: "green",
-          pointBackgroundColor: "green",
-          pointBorderColor: "green",
-          pointHoverBackgroundColor: "green",
-          pointHoverBorderColor: "green",
+          backgroundColor: "#28a745",
+          pointBackgroundColor: "#28a745",
+          pointBorderColor: "#28a745",
+          pointHoverBackgroundColor: "#28a745",
+          pointHoverBorderColor: "#28a745",
           data: this.state.yAxis
         }],
       options: {
@@ -70,7 +70,7 @@ class Research extends Component {
                 xAxes: [{
                   scaleLabel: {
                   display: true,
-                  labelString: "Time",
+                  labelString: "Date",
                   fontColor: "black",
                   fontSize: 15,
                   fontWeight: 600

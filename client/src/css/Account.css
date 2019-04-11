@@ -20,6 +20,7 @@ h1 {
   padding: 20px;
   text-align: center;
   border: 1px solid gray;
+  border-radius: 3px;
 }
 
 button {
@@ -47,6 +48,7 @@ input {
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.8));
   border: 1px solid gray;
   padding: 20px;
+  border-radius: 3px;
 }
 
 .position_table th {
