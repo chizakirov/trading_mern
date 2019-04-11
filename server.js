@@ -9,10 +9,11 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + './server'));
 app.use(express.static( __dirname + '/client/public' ));
 
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static(__dirname + './server'));
+  app.use(express.static( __dirname + '/client/public' ));
+};
 
 routes(app);
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "build", "index.html"));
-});
 app.listen(port, () => console.log("listening on port", port));
