@@ -42,7 +42,7 @@
 .news {
   margin: 70px auto;
   padding: 15px;
-  width: 95%;
+  width: 60%;
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
   border: 1px solid gray;
   font-weight: bold;
