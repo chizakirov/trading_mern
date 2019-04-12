@@ -124,7 +124,7 @@ class Research extends Component {
           </div>
 
           <div className="chart">
-            <Line data={chartData} options={chartData.options} width="450" height="220"/>
+            <Line data={chartData} options={chartData.options} width="450" height="240"/>
           </div>
         </div>
 

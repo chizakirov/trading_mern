@@ -27,6 +27,7 @@
 
 .stock-stats{
   width: 30%;
+  height: 100%;
   padding: 80px 50px;
   background-image: linear-gradient(to top, rgba(0,0,0,.6), rgba(0,0,0,.4));
   border: 1px solid gray;
