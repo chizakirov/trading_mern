@@ -4,7 +4,7 @@ A trading app that allows users to place a trade and research a stock data such 
 #To run the app, use these command line:
 
 git clone https://github.com/chizakirov/trading_mern
-npm install
-cd client
-npm install
-npm run dev
+# npm install
+# cd client
+# npm install
+# npm run dev
