@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/react_trading', { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://chizakirov:1MERNengineer@ds137596.mlab.com:37596/heroku_d3bknxtc', { useNewUrlParser: true });
 
 const UserSchema = new mongoose.Schema({
   email: { type: String, required: true },
