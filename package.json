@@ -33,5 +33,6 @@
   },
   "engines": {
     "node": "10.15.0"
-  }
+  },
+  "homepage": "https://tradingsimulation.herokuapp.com/"
 }
