@@ -11,6 +11,10 @@ app.use(express.static( __dirname + '/client/public' ));
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static( __dirname + 'client/build' ));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
+  });
 };
 
 routes(app);
