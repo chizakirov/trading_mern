@@ -109,7 +109,7 @@ class Research extends Component {
 
         <h4>Enter a ticker symbol</h4>
         <form className="form" onSubmit={this.getChart}>
-          <input id="search-input" type="text" onChange={e => (this.setSymbol(e.target.value))}/>
+          <input id="search-input" type="text" onChange={e => (this.setSymbol(e.target.value))} placeholder="search..."/>
           <button type="submit">Search</button>
         </form>
         <div className="main">

@@ -10,8 +10,7 @@ app.use(express.static(__dirname + './server'));
 app.use(express.static( __dirname + '/client/public' ));
 
 if(process.env.NODE_ENV === "production"){
-  app.use(express.static(__dirname + './server'));
-  app.use(express.static( __dirname + '/client/public' ));
+  app.use(express.static( __dirname + 'client/build' ));
 };
 
 routes(app);
