@@ -31,7 +31,6 @@ class Account extends Component{
     event.preventDefault();
     const res = await stockservices.updateBalance({deposit: this.state.deposit});
     this.setState({balance: res.data})
-    // console.log(res);
   }
 
   render(){
