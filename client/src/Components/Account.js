@@ -17,10 +17,12 @@ class Account extends Component{
   async componentDidMount() {
     try{
       const res = await stockservices.allOrders();
-      this.setState({orders: res.data.orders, balance: res.data.balance});
-      //group by each symbol, sum quantity & total of each symbol totals
-      // const output = _.groupBy(res.data.orders, res.data.orders.symbol);
-      // console.log("output ", output);
+      this.setState({
+        orders: res.data.orders, 
+        balance: res.data.balance, 
+        currentBalance: res.data.currentBalance
+      });
+
       let orderTotal = 0;
       if(this.state.orders && this.state.orders.length){
         orderTotal = this.state.orders.reduce((sum, order) => {
@@ -59,18 +61,6 @@ class Account extends Component{
   }
 
   render(){
-    // let orderTotal = 0;
-    // if(this.state.orders && this.state.orders.length){
-    //     orderTotal = this.state.orders.reduce((sum, order) => {
-    //     if(order.type.toLowerCase() === "buy"){
-    //       return sum - order.total;
-    //     }else{
-    //       return sum + order.total;
-    //     }
-    //   }, 0);
-    //   console.log("total of orders", orderTotal);
-    //   this.setState({ currentBalance: +Math.round((this.state.balance + orderTotal)*100)/100 });
-    // };
 
     return(
       <div className="account-wrapper">

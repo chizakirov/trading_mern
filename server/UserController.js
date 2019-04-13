@@ -33,11 +33,8 @@ module.exports = {
         const message = 'Invalid email/password';
         res.json(message);
       }
-      // console.log('user?', user);
 
       const match = await bcrypt.compare(req.body.password, user.password);
-      // res == true
-      // console.log('match?', true);
       if (match) {
         const token = jwt.sign({ id: user._id, email: user.email }, 'somethingsomething');
         console.log("token login ", token);
@@ -74,10 +71,13 @@ module.exports = {
     try{
       const user = await User.findOne({ email: req.decoded.email}).populate('orders')
       if(!user){
-        const message = "Login to deposit";
+        const message = "Login to view orders";
         res.json(message);
       }else {
-        res.json({orders: user.orders, balance: user.balance});
+        res.json({
+          orders: user.orders, 
+          balance: user.balance, 
+          currentBalance: user.currentBalance });
       }
     }catch(err){
       console.log(err);
