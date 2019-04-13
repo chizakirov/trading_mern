@@ -15,7 +15,6 @@ const secret = process.env.SECRET || 'My super secret';
 
 const checkToken = (req, res, next) => {
   let token = req.headers['x-access-token'] || req.headers.authorization;
-  console.log('token', token);
   // Check now
   if (!token) {
     res.json({ message: 'No token found' });
@@ -31,7 +30,7 @@ const checkToken = (req, res, next) => {
     if (err) {
       res.json({ message: 'Token not valid' });
     }
-    console.log('Decoded token:', decoded);
+
     req.decoded = decoded;
     next();
   });

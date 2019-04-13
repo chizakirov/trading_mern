@@ -16,7 +16,6 @@ export default {
 
   getNews(symbol) {
     return axios.get(`https://api.iextrading.com/1.0/stock/${symbol}/batch?types=quote,news,chart&range=1m&last=10`);
-    // another API: https://newsapi.org/v2/everything?q=${symbol}&from=2019-01-29&sortBy=popularity&apiKey=3978d00e72c34c9f9d5f6da04b681b80`);
   },
 
   getMultipleStock(symbol1, symbol2, symbol3) {
@@ -25,8 +24,7 @@ export default {
 
   order(order) {
     const jwtToken = localStorage.getItem('jwt');
-    // console.log('successfully placed order', order);
-    console.log('token? ', jwtToken);
+    // console.log('token? ', jwtToken);
     const options = {
       method: 'POST',
       headers: {

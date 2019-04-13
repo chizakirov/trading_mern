@@ -27,16 +27,16 @@ module.exports = {
   Login: async (req, res) => {
     try {
       const user = await User.findOne({ email: req.body.email }).populate('orders');
-      console.log('Does my user have orders?', user);
+      // console.log('Does my user have orders?', user);
       if (!user) {
         const message = 'Invalid email/password';
         res.json(message);
       }
-      console.log('user?', user);
+      // console.log('user?', user);
 
       const match = await bcrypt.compare(req.body.password, user.password);
       // res == true
-      console.log('match?', true);
+      // console.log('match?', true);
       if (match) {
         const token = jwt.sign({ id: user._id, email: user.email }, 'My super secret');
         // Take the secret (private key), take the user info and encrypt it with that private key.
