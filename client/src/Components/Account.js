@@ -30,9 +30,9 @@ class Account extends Component{
           return sum + order.total;
         }
         }, 0);
-        const curBalance = Math.round((this.state.balance + orderTotal)*100)/100;
+        const curBalance = +Math.round((this.state.balance + orderTotal)*100)/100;
         console.log('curBalance ', curBalance);
-        this.setState({ currentBalance: +curBalance });
+        this.setState({ currentBalance: curBalance });
       };
       
 
@@ -49,7 +49,9 @@ class Account extends Component{
     try{
       event.preventDefault();
       const res = await stockservices.updateBalance({deposit: this.state.deposit});
-      this.setState({ balance: res.data,  currentBalance: +this.state.currentBalance + +this.state.deposit })
+      const deposit = +this.state.deposit;
+      console.log("res ", res.data);
+      this.setState({ balance: res.data, currentBalance: this.state.currentBalance + deposit })
     }catch(err){
       this.setState({ err });
     }
