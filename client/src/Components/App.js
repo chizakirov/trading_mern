@@ -11,8 +11,6 @@ import Signup from './Signup';
 import Login from './Login';
 import '../css/App.css';
 
-// TODO: Login does not trigger app component did mount which is setting our loggedin state. 
-// Solution: React Context or Redux
 class App extends Component {
 
   state = {
