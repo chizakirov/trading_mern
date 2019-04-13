@@ -11,7 +11,7 @@ class Account extends Component{
     deposit: 0,
     returns: 0,
     orders: [],
-    err: ''
+    // err: ''
   }
 
   async componentDidMount() {
@@ -21,8 +21,21 @@ class Account extends Component{
       //group by each symbol, sum quantity & total of each symbol totals
       // const output = _.groupBy(res.data.orders, res.data.orders.symbol);
       // console.log("output ", output);
+      let orderTotal = 0;
+      if(this.state.orders && this.state.orders.length){
+        orderTotal = this.state.orders.reduce((sum, order) => {
+        if(order.type.toLowerCase() === "buy"){
+          return sum - order.total;
+        }else{
+          return sum + order.total;
+        }
+      }, 0);
+      console.log("total of orders", orderTotal);
+      this.setState({ currentBalance: +Math.round((this.state.balance + orderTotal)*100)/100 });
+      };
+
     }catch(err){
-      this.setState({ err: res.data.message });
+      console.log(err);
     }
   }
   onChange = (deposit) => {
@@ -36,19 +49,18 @@ class Account extends Component{
   }
 
   render(){
-    let orderTotal = 0;
-    // let currentBalance = 0;
-    if(this.state.orders && this.state.orders.length){
-        orderTotal = this.state.orders.reduce((sum, order) => {
-        if(order.type.toLowerCase() === "buy"){
-          return sum - order.total;
-        }else{
-          return sum + order.total;
-        }
-      }, 0);
-      console.log("total of orders", orderTotal);
-      this.setState({ currentBalance: +Math.round((this.state.balance + orderTotal)*100)/100 });
-    };
+    // let orderTotal = 0;
+    // if(this.state.orders && this.state.orders.length){
+    //     orderTotal = this.state.orders.reduce((sum, order) => {
+    //     if(order.type.toLowerCase() === "buy"){
+    //       return sum - order.total;
+    //     }else{
+    //       return sum + order.total;
+    //     }
+    //   }, 0);
+    //   console.log("total of orders", orderTotal);
+    //   this.setState({ currentBalance: +Math.round((this.state.balance + orderTotal)*100)/100 });
+    // };
 
     return(
       <div className="account-wrapper">
