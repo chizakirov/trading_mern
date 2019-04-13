@@ -14,7 +14,7 @@ class Account extends Component{
     err: ''
   }
 
-  async componentDidMount() {
+  async getInfo(){
     try{
       const res = await stockservices.allOrders();
       this.setState({
@@ -36,11 +36,13 @@ class Account extends Component{
         console.log('curBalance ', curBalance);
         this.setState({ currentBalance: curBalance });
       };
-      
-
     }catch(err){
       this.setState({ err });
     }
+  }
+
+  componentDidMount(){
+    this.getInfo();
   }
 
   onChange = (deposit) => {
@@ -51,8 +53,6 @@ class Account extends Component{
     try{
       event.preventDefault();
       const res = await stockservices.updateBalance({deposit: this.state.deposit});
-
-      console.log("res ", res.data);
       this.setState({ balance: res.data.balance, currentBalance: res.data.currentBalance })
     }catch(err){
       this.setState({ err });
