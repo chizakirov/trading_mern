@@ -35,7 +35,7 @@ class Account extends Component{
 
   render(){
     let orderTotal = 0;
-    let currentBalance = 0;
+    let currentBalance;
     if(this.state.orders && this.state.orders.length){
         orderTotal = this.state.orders.reduce((sum, order) => {
         if(order.type.toLowerCase() === "buy"){
@@ -45,9 +45,8 @@ class Account extends Component{
         }
       }, 0);
       console.log("total of orders", orderTotal);
-      currentBalance = Math.round((this.state.balance + orderTotal)*100)/100;
+      currentBalance = +Math.round((this.state.balance + orderTotal)*100)/100;
     };
-    
 
     return(
       <div className="account-wrapper">
