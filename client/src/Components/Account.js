@@ -35,7 +35,7 @@ class Account extends Component{
 
   render(){
     let orderTotal = 0;
-    if(this.state.orders.length){
+    if(this.state.orders.length > 0){
         orderTotal = this.state.orders.reduce((sum, order) => {
         if(order.type.toLowerCase() === "buy"){
           return sum - order.total;
