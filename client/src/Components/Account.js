@@ -7,6 +7,7 @@ import '../css/Account.css';
 class Account extends Component{
   state = {
     balance: 0,
+    currentBalance: 0,
     deposit: 0,
     returns: 0,
     orders: [],
@@ -36,7 +37,7 @@ class Account extends Component{
 
   render(){
     let orderTotal = 0;
-    let currentBalance;
+    // let currentBalance = 0;
     if(this.state.orders && this.state.orders.length){
         orderTotal = this.state.orders.reduce((sum, order) => {
         if(order.type.toLowerCase() === "buy"){
@@ -46,7 +47,7 @@ class Account extends Component{
         }
       }, 0);
       console.log("total of orders", orderTotal);
-      currentBalance = +Math.round((this.state.balance + orderTotal)*100)/100;
+      this.setState({ currentBalance: +Math.round((this.state.balance + orderTotal)*100)/100 });
     };
 
     return(
@@ -59,7 +60,7 @@ class Account extends Component{
             <button type="submit">Deposit</button>
           </form>
           <h4>Initial Balance: ${this.state.balance}</h4>
-          <h4>Current Balance: ${currentBalance}</h4>
+          <h4>Current Balance: ${this.state.currentBalance}</h4>
         </div>
         <h3>Order History</h3>
         <table className="position_table">
