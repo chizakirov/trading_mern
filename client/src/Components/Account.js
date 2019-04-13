@@ -9,7 +9,8 @@ class Account extends Component{
     balance: 0,
     deposit: 0,
     returns: 0,
-    orders: []
+    orders: [],
+    err: ''
   }
 
   async componentDidMount() {
@@ -20,7 +21,7 @@ class Account extends Component{
       // const output = _.groupBy(res.data.orders, res.data.orders.symbol);
       // console.log("output ", output);
     }catch(err){
-      console.log(err)
+      this.setState({ err: res.data.message });
     }
   }
   onChange = (deposit) => {
