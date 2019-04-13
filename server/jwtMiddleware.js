@@ -15,6 +15,7 @@ const secret = process.env.SECRET || 'somethingsomething';
 
 const checkToken = (req, res, next) => {
   let token = req.headers['x-access-token'] || req.headers.authorization;
+  console.log("checkToken", token);
   // Check now
   if (!token) {
     res.json({ message: 'No token found' });
