@@ -61,8 +61,9 @@ module.exports = {
         res.json(message);
       }else {
         user.balance += +req.body.deposit;
+        user.currentBalance += +req.body.deposit;
         user.save();
-        res.json(user.balance);
+        res.json({ balance: user.balance, currentBalance: user.currentBalance });
       }
     }catch (err){
       console.log(err);

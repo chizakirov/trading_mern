@@ -8,6 +8,7 @@ const UserSchema = new mongoose.Schema({
   email: { type: String, required: true },
   password: { type: String, required: true },
   balance: {type: Number, default: 0},
+  currentBalance: {type: Number, default: 0},
   orders: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Order' }]
 });
 

@@ -49,9 +49,9 @@ class Account extends Component{
     try{
       event.preventDefault();
       const res = await stockservices.updateBalance({deposit: this.state.deposit});
-      const deposit = +this.state.deposit;
+
       console.log("res ", res.data);
-      this.setState({ balance: res.data, currentBalance: this.state.currentBalance + deposit })
+      this.setState({ balance: res.data.balance, currentBalance: res.data.currentBalance })
     }catch(err){
       this.setState({ err });
     }
