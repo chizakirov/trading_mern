@@ -30,10 +30,11 @@ class Account extends Component{
           return sum + order.total;
         }
         }, 0);
+        const curBalance = Math.round((this.state.balance + orderTotal)*100)/100;
+        console.log('curBalance ', curBalance);
+        this.setState({ currentBalance: +curBalance });
       };
-      const curBalance = Math.round((this.state.balance + orderTotal)*100)/100;
-      console.log('curBalance ', curBalance);
-      this.setState({ currentBalance: +curBalance });
+      
 
     }catch(err){
       this.setState({ err });
