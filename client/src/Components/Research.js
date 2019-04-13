@@ -27,7 +27,6 @@ class Research extends Component {
       event.preventDefault();
 
       const res = await stockservices.getNews(this.state.symbol);
-      console.log(res.data);
       const chart = res.data.chart;
       const closingPrices = chart.map(price => price['open']);
       const xData= chart.map(price => price['date']);

@@ -8,8 +8,8 @@ module.exports = function (app) {
   app
     .post('/api/user/login', userController.Login)
     .post('/api/user/signup', userController.Signup)
-    .put('/api/user/account', userController.updateBalance)
-    .get('/api/user/orders', userController.getOrders)
+    .put('/api/user/account', checkToken, userController.updateBalance)
+    .get('/api/user/orders', checkToken, userController.getOrders)
     // .get('/api/user/returns', checkToken, userController.getReturns)
 
     .get('/api/stock/:symbol', controller.getQuote)
@@ -17,9 +17,9 @@ module.exports = function (app) {
     .get('/api/position', controller.allPositions)
 
     // .get('api/stock/orders', controller.allOrders)
-    .get('/api/order/', controller.oneOrder)
-    .post('/api/order/', controller.placeOrder)
-    .get('/api/account', controller.currentBalance)
+    .get('/api/order/', checkToken, controller.oneOrder)
+    .post('/api/order/', checkToken, controller.placeOrder)
+    .get('/api/account', checkToken, controller.currentBalance)
     .all('*', (req, res, next) => {
       res.sendFile(path.resolve('./public/index.html'));
     });

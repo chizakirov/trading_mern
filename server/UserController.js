@@ -11,7 +11,7 @@ module.exports = {
       const user = await User.findOne({ email: req.body.email });
       if (!user) {
         const newUser = await User.create(req.body);
-        const token = jwt.sign({ id: newUser._id, email: newUser.email }, 'somethingsomething');
+        const token = jwt.sign({ id: newUser._id, email: newUser.email }, "somethingsomething");
         // Take the secret (private key), take the user info and encrypt it with that private key.
 
         res.json(token);
@@ -27,7 +27,7 @@ module.exports = {
   Login: async (req, res) => {
     try {
       const user = await User.findOne({ email: req.body.email }).populate('orders');
-      // console.log('Does my user have orders?', user);
+      console.log('Does my user have orders?', user);
       if (!user) {
         const message = 'Invalid email/password';
         res.json(message);
@@ -38,7 +38,7 @@ module.exports = {
       // res == true
       // console.log('match?', true);
       if (match) {
-        const token = jwt.sign({ id: user._id, email: user.email }, 'somethingsomething');
+        const token = jwt.sign({ id: user._id, email: user.email }, "somethingsomething");
         // Take the secret (private key), take the user info and encrypt it with that private key.
 
         res.json(token);
@@ -81,13 +81,13 @@ module.exports = {
     }
   },
 
-  getReturns: async(req, res) => {
-    try{
+  // getReturns: async(req, res) => {
+  //   try{
       
-    }catch {
-      console.log(err);
-    }
-  }
+  //   }catch {
+  //     console.log(err);
+  //   }
+  // }
   
   // getInfo: async (req, res) => {
   //   try {
