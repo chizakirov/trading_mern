@@ -73,7 +73,7 @@ class Account extends Component{
           </tr>
         </thead>
          <tbody>
-         {this.state.orders.map(order => 
+         {this.state.orders && this.state.orders.map(order => 
               { 
                 const total = Math.round(+order.quantity * +order.price*100)/100;
                 const orderDate = new Date(order.date).toDateString("MM/DD/YYYY");
