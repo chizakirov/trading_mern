@@ -7,8 +7,8 @@ const port = process.env.PORT || 1234;
 const app = express();
 
 app.use(bodyParser.json());
-app.use(express.static(__dirname + './server'));
-app.use(express.static( __dirname + '/client/public' ));
+// app.use(express.static(__dirname + './server'));
+// app.use(express.static( __dirname + '/client/public' ));
 
 if(process.env.NODE_ENV === "production"){
   app.use(express.static("client/build"));
