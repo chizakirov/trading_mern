@@ -11,7 +11,7 @@ module.exports = {
       const user = await User.findOne({ email: req.body.email });
       if (!user) {
         const newUser = await User.create(req.body);
-        const token = jwt.sign({ id: newUser._id, email: newUser.email }, 'My super secret');
+        const token = jwt.sign({ id: newUser._id, email: newUser.email }, 'somethingsomething');
         // Take the secret (private key), take the user info and encrypt it with that private key.
 
         res.json(token);
@@ -38,7 +38,7 @@ module.exports = {
       // res == true
       // console.log('match?', true);
       if (match) {
-        const token = jwt.sign({ id: user._id, email: user.email }, 'My super secret');
+        const token = jwt.sign({ id: user._id, email: user.email }, 'somethingsomething');
         // Take the secret (private key), take the user info and encrypt it with that private key.
 
         res.json(token);

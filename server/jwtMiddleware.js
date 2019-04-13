@@ -8,7 +8,7 @@
 
 const jwt = require('jsonwebtoken');
 
-const secret = process.env.SECRET || 'My super secret';
+const secret = process.env.SECRET || 'somethingsomething';
 
 
 // Check if token is valid
