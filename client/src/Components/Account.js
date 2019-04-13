@@ -11,7 +11,7 @@ class Account extends Component{
     deposit: 0,
     returns: 0,
     orders: [],
-    // err: ''
+    err: ''
   }
 
   async componentDidMount() {
@@ -29,15 +29,15 @@ class Account extends Component{
         }else{
           return sum + order.total;
         }
-      }, 0);
-      console.log("total of orders", orderTotal);
+        }, 0);
       this.setState({ currentBalance: +Math.round((this.state.balance + orderTotal)*100)/100 });
       };
 
     }catch(err){
-      console.log(err);
+      this.setState({ err });
     }
   }
+
   onChange = (deposit) => {
     this.setState({ deposit })
   }
