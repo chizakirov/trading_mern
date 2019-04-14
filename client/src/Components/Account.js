@@ -61,7 +61,7 @@ class Account extends Component{
   }
 
   render(){
-
+    const { balance, currentBalance } = this.state;
     return(
       <div className="account-wrapper">
         <h1>Account Overview</h1>
@@ -71,8 +71,8 @@ class Account extends Component{
             <input type="number" onChange={e => {this.onChange(e.target.value)}} />
             <button type="submit">Deposit</button>
           </form>
-          <h4>Initial Balance: ${this.state.balance}</h4>
-          <h4>Current Balance: ${this.state.currentBalance}</h4>
+          <h4>Initial Balance: ${balance}</h4>
+          <h4>Current Balance: ${currentBalance}</h4>
         </div>
         <h3>Order History</h3>
         <table className="position_table">

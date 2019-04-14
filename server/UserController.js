@@ -75,8 +75,8 @@ module.exports = {
         res.json(message);
       }else {
         res.json({
-          orders: user.orders, 
-          balance: user.balance, 
+          orders: user.orders,
+          balance: user.balance,
           currentBalance: user.currentBalance });
       }
     }catch(err){
