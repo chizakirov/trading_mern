@@ -74,6 +74,7 @@ module.exports = {
         const message = "Login to view orders";
         res.json(message);
       }else {
+        console.log("orders ? ", user.orders);
         res.json({
           orders: user.orders,
           balance: user.balance,
