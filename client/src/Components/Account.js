@@ -17,6 +17,7 @@ class Account extends Component{
   async getInfo(){
     try{
       const res = await stockservices.allOrders();
+      console.log('res in getinfo', res.data);
       this.setState({
         orders: res.data.orders, 
         balance: res.data.balance, 
