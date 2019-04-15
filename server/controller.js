@@ -14,6 +14,13 @@ module.exports = {
       price, quantity, type, total, symbol
     } = req.body;
     try{
+      // if(type === "sell"){
+      //   //find if symbol exists in orders
+      //   //if yes:
+      //   //compare current quantity with quantity
+      //   const findSymbol = await Order.find({symbol});
+      //   if(findSymbol)
+      // }
       const order = await Order.create({
         symbol,
         price,

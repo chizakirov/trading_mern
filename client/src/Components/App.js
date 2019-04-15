@@ -30,6 +30,10 @@ class App extends Component {
     localStorage.removeItem('jwt');
   }
 
+  handleLogin = () => {
+    this.setState({isLoggedIn: true});
+  }
+
   render() {
     const { isLoggedIn } = this.state;
     return (
@@ -60,6 +64,9 @@ class App extends Component {
               <Route path="/research" component={Research} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
+
+              <Route path="/login" render={()=><Login handleLogin={this.handleLogin}/>}/>
+
               <Route component={Notfound} />
             </Switch>
             :

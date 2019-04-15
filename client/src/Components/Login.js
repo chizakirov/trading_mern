@@ -35,7 +35,8 @@ class Login extends Component {
       } else {
         // If we get back a token, store it in local storage
         localStorage.setItem('jwt', res.data);
-        window.location.reload();
+        // window.location.reload();
+        this.props.handleLogin();
         this.props.history.push('/');
       }
     } catch (err) {
