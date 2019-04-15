@@ -37,7 +37,6 @@ class Login extends Component {
         localStorage.setItem('jwt', res.data);
         window.location.reload();
         this.props.history.push('/');
-        
       }
     } catch (err) {
       this.setState({ err });
