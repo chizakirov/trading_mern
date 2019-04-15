@@ -10,6 +10,8 @@ const app = express();
 app.use(bodyParser.json());
 
 
+routes(app);
+
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
 
@@ -17,7 +19,5 @@ if (process.env.NODE_ENV === 'production') {
     res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
   });
 }
-
-routes(app);
 
 app.listen(port, () => console.log('listening on port', port));
