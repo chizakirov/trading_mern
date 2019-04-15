@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../css/Signup.css';
+
 class Login extends Component {
   state = {
     email: '',
@@ -40,12 +41,14 @@ class Login extends Component {
         this.props.history.push('/');
       }
     } catch (err) {
-      this.setState({ err });
+      this.setState({ err: err.message });
     }
   }
 
   render() {
     const { err } = this.state;
+    console.log("props", this.props);
+
     return (
       <div className="wrapper">
         <div className="inner">
