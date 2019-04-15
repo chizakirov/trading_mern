@@ -35,6 +35,7 @@ module.exports = {
       Math.round((user.currentBalance - order.price*order.quantity)*100)/100 : 
       Math.round((user.currentBalance + order.price*order.quantity)*100)/100;
       user.save();
+      res.json(order);
     }catch(err){
       res.json(err);
     }
