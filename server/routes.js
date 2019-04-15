@@ -20,7 +20,5 @@ module.exports = function (app) {
     .get('/api/order/', checkToken, controller.oneOrder)
     .post('/api/order/', checkToken, controller.placeOrder)
     .get('/api/account', checkToken, controller.currentBalance)
-    .all('*', (req, res, next) => {
-      res.sendFile(path.resolve('./public/index.html'));
-    });
+
 };
