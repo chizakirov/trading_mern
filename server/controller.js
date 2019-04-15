@@ -1,5 +1,4 @@
-const request = require('request');
-const model = require('./model.js');
+const {Order, Position, User} = require('./model.js');
 
 module.exports = {
 
@@ -9,60 +8,56 @@ module.exports = {
     });
   },
 
-  placeOrder: (req, res) => {
-    console.log('req.body', req.body, req.decoded);
+  placeOrder: async(req, res) => {
     const { id } = req.decoded;
     const {
       price, quantity, type, total, symbol
     } = req.body;
-    model.Order.create({
-      symbol,
-      price,
-      quantity,
-      type,
-      total,
-      userId: id
-    })
-      .then((order) => {
-        console.log('placed order', order);
-
-        model.User.findById(id)
-          .then((user) => {
-            user.orders.push(order);
-            user.currentBalance = order.type === "buy" ? 
-            Math.round((user.currentBalance - order.price*order.quantity)*100)/100 : 
-            Math.round((user.currentBalance + order.price*order.quantity)*100)/100;
-
-            user.save();
-          });
-
-
-        model.Position.findOne({ symbol: order.symbol })
-          .then((data) => {
-            if (data == null) {
-              model.Position.create({ symbol: order.symbol, quantity: order.quantity, total: order.total })
-                .then((result) => {
-                  res.json(order);
-                })
-                .catch(err => res.json(err));
-            } else if (order.type === 'buy') {
-              const order_quantity = order.quantity;
-              data.quantity += order_quantity;
-              data.total += order.total;
-              data.save();
-              res.json(order);
-            } else if (order.type == 'sell') {
-              const order_quantity = order.quantity;
-              data.quantity -= order_quantity;
-              data.total += order.total;
-              data.save();
-              res.json(order);
-            }
-          })
-          .catch(err => res.json(err));
-      })
-      .catch(err => res.json(err));
+    try{
+      const order = await Order.create({
+        symbol,
+        price,
+        quantity,
+        type,
+        total,
+        userId: id
+      });
+      const user = await User.findById(id);
+      user.orders.push(order);
+      user.currentBalance = order.type === "buy" ? 
+      Math.round((user.currentBalance - order.price*order.quantity)*100)/100 : 
+      Math.round((user.currentBalance + order.price*order.quantity)*100)/100;
+      user.save();
+    }catch(err){
+      res.json(err);
+    }
   },
+
+      //   model.Position.findOne({ symbol: order.symbol })
+      //     .then((data) => {
+      //       if (data == null) {
+      //         model.Position.create({ symbol: order.symbol, quantity: order.quantity, total: order.total })
+      //           .then((result) => {
+      //             res.json(order);
+      //           })
+      //           .catch(err => res.json(err));
+      //       } else if (order.type === 'buy') {
+      //         const order_quantity = order.quantity;
+      //         data.quantity += order_quantity;
+      //         data.total += order.total;
+      //         data.save();
+      //         res.json(order);
+      //       } else if (order.type == 'sell') {
+      //         const order_quantity = order.quantity;
+      //         data.quantity -= order_quantity;
+      //         data.total += order.total;
+      //         data.save();
+      //         res.json(order);
+      //       }
+      //     })
+      //     .catch(err => res.json(err));
+      // })
+      // .catch(err => res.json(err));
 
   oneOrder: (req, res) => {
     model.Order.find({})

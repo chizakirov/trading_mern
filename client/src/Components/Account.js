@@ -75,6 +75,9 @@ class Account extends Component{
           <h4>Initial Balance: ${balance}</h4>
           <h4>Current Balance: ${currentBalance}</h4>
         </div>
+
+        {this.state.err && <div className="err">{this.state.err}</div>}
+
         <h3>Order History</h3>
         <table className="position_table">
         <thead>
@@ -105,7 +108,6 @@ class Account extends Component{
               )}
             )}
          </tbody>
-            
         </table>
       </div>
     )
