@@ -30,8 +30,8 @@ module.exports = {
           .then((user) => {
             user.orders.push(order);
             user.currentBalance = order.type === "buy" ? 
-            user.currentBalance - order.price*order.quantity : 
-            user.currentBalance + order.price*order.quantity;
+            Math.round((user.currentBalance - order.price*order.quantity)*100)/100 : 
+            Math.round((user.currentBalance + order.price*order.quantity)*100)/100;
 
             user.save();
           });

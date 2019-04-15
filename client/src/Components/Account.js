@@ -24,19 +24,19 @@ class Account extends Component{
         currentBalance: res.data.currentBalance
       });
 
-      let orderTotal = 0;
-      if(this.state.orders.length > 0){
-        orderTotal = this.state.orders.reduce((sum, order) => {
-        if(order.type.toLowerCase() === "buy"){
-          return sum - order.total;
-        }else{
-          return sum + order.total;
-        }
-        }, 0);
-        const curBalance = +Math.round((this.state.balance + orderTotal)*100)/100;
-        console.log('curBalance ', curBalance);
-        this.setState({ currentBalance: curBalance });
-      };
+      // let orderTotal = 0;
+      // if(this.state.orders.length > 0){
+      //   orderTotal = this.state.orders.reduce((sum, order) => {
+      //   if(order.type.toLowerCase() === "buy"){
+      //     return sum - order.total;
+      //   }else{
+      //     return sum + order.total;
+      //   }
+      //   }, 0);
+      //   // const curBalance = +Math.round((this.state.balance + orderTotal)*100)/100;
+      //   console.log('curBalance ', curBalance);
+      //   this.setState({ currentBalance: curBalance });
+      // };
     }catch(err){
       this.setState({ err });
     }
