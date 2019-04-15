@@ -36,6 +36,7 @@ class Signup extends Component {
       } else {
         // If we get back a token, store it in local storage
         localStorage.setItem('jwt', res.data);
+        this.props.handleLogin();
         this.props.history.push('/');
       }
     } catch (err) {

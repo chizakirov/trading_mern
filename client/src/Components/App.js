@@ -62,10 +62,13 @@ class App extends Component {
               <Route path="/order" component={Order} />
               <Route path="/orderConfirm" component={OrderConfirm} />
               <Route path="/research" component={Research} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
+              
+
+             
 
               <Route path="/login" render={()=><Login handleLogin={this.handleLogin}/>}/>
+
+              <Route path="/signup" render={()=><Signup handleLogin={this.handleLogin}/>}/>
 
               <Route component={Notfound} />
             </Switch>
