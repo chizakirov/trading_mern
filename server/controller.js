@@ -29,6 +29,10 @@ module.exports = {
         model.User.findById(id)
           .then((user) => {
             user.orders.push(order);
+            user.currentBalance = order.type === "buy" ? 
+            user.currentBalance - order.price*order.quantity : 
+            user.currentBalance + order.price*order.quantity;
+
             user.save();
           });
 
